@@ -1,5 +1,7 @@
 package com.coding.springPractice;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -36,19 +38,19 @@ public class Alien {
 	
 	
 
-//	@Autowired         //By Type injection
-//	@Qualifier("lap1") //By name injection 
-//	private Laptop laptop;
+	@Autowired         //By Type injection
+	@Qualifier("lap1") //By name injection 
+	private Laptop laptop;
 
 	
 
-//	@Override
-//	public String toString() {
-//		return "Alien [aid=" + aid + ", tech=" + tech + ", laptop=" + laptop + "]";
-//	}
-//	
-//	public void show() {
-//		System.out.println("In show .....");
-//	}
+	@Override
+	public String toString() {
+		return "Alien [aid=" + aid + ", tech=" + tech + ", laptop=" + laptop + "]";
+	}
+	
+	public void show() {
+		System.out.println("In show .....");
+	}
 
 }
