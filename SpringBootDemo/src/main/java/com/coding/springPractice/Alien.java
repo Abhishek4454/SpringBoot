@@ -1,42 +1,54 @@
 package com.coding.springPractice;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Alien {
 
-	private int aid;
-	private int tech;
-	
-	@Autowired         //By Type injection
-	@Qualifier("lap1") //By name injection 
-	private Laptop laptop;
+	private String aid;
+	private String aname;
 
-	public int getAid() {
+	private String tech;
+
+	public String getAid() {
 		return aid;
 	}
 
-	public void setAid(int aid) {
+	public void setAid(String aid) {
 		this.aid = aid;
 	}
 
-	public int getTech() {
+	public String getAname() {
+		return aname;
+	}
+
+	public void setAname(String aname) {
+		this.aname = aname;
+	}
+
+	public String getTech() {
 		return tech;
 	}
 
-	public void setTech(int tech) {
+	public void setTech(String tech) {
 		this.tech = tech;
 	}
-
-	@Override
-	public String toString() {
-		return "Alien [aid=" + aid + ", tech=" + tech + ", laptop=" + laptop + "]";
-	}
 	
-	public void show() {
-		System.out.println("In show .....");
-	}
+	
+
+//	@Autowired         //By Type injection
+//	@Qualifier("lap1") //By name injection 
+//	private Laptop laptop;
+
+	
+
+//	@Override
+//	public String toString() {
+//		return "Alien [aid=" + aid + ", tech=" + tech + ", laptop=" + laptop + "]";
+//	}
+//	
+//	public void show() {
+//		System.out.println("In show .....");
+//	}
 
 }

@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.coding.springPractice.Alien;
+
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
@@ -29,13 +31,24 @@ public class HomeController {
 //		return "home";
 //	}
 	
-	//using Model and view
+//	//using Model and view
+//	@RequestMapping("/home")
+//	public ModelAndView home(@RequestParam("name")String name) {
+//		System.out.println("hi");
+//		ModelAndView mv= new ModelAndView();
+//		mv.setViewName("home");
+//		mv.addObject("name", name);
+//		return mv;
+//	}
+	
 	@RequestMapping("/home")
-	public ModelAndView home(@RequestParam("name")String name) {
-		System.out.println("hi");
+	public ModelAndView home(Alien alien) {
 		ModelAndView mv= new ModelAndView();
+		mv.addObject("obj", alien);
 		mv.setViewName("home");
-		mv.addObject("name", name);
+		
 		return mv;
 	}
+	
+	
 }

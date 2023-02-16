@@ -7,6 +7,7 @@
 <title>Home</title>
 </head>
 <body>
-	<h1>Inside home .Welcome ${name}</h1>
+	<%-- <h1>Inside home .Welcome ${name}</h1> --%>
+	<h1>Inside home .Welcome ${obj.aid} ${obj.aname} ${obj.tech}</h1>
 </body>
 </html>
