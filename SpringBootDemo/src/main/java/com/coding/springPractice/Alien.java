@@ -7,16 +7,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class Alien {
 
-	private String aid;
+	private int aid;
 	private String aname;
+	
 
 	private String tech;
 
-	public String getAid() {
+	public Integer getAid() {
 		return aid;
 	}
 
-	public void setAid(String aid) {
+	public void setAid(int aid) {
 		this.aid = aid;
 	}
 

@@ -8,8 +8,14 @@
 </head>
 <body>
 	<form action="add">
-		<input type="text" name="eid"><br> 
-		<input type="text" name="ename"><br>
+		<input type="text" name="eid"><br> <input type="text"
+			name="ename"><br> <input type="text" name="tech"><br>
 		<input type="submit">
+	</form>
+	
+	<form action="get">
+		<input type="text" name="eid"><br>
+		<input type="submit">
+	</form>
 </body>
 </html>
