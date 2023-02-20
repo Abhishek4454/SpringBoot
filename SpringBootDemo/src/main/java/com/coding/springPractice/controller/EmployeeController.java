@@ -1,5 +1,8 @@
 package com.coding.springPractice.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,19 +48,19 @@ public class EmployeeController {
 	}
 	
 	
-	@RequestMapping("/employees")
+	@RequestMapping(path="/employees",produces="application/xml")//We can do content negotiations using produces
 	@ResponseBody
-	public String getEmployee() {
+	public List<Employee> getEmployee() {
 		
-		return employeeRepo.findAll().toString();
+		return employeeRepo.findAll();
 	}
 	
 
 	@RequestMapping("/employee/{eid}")
 	@ResponseBody
-	public String getEmployeeByID(@PathVariable int eid) {
-		
-		return employeeRepo.findById(eid).toString();
+	public Optional<Employee> getEmployeeByID(@PathVariable int eid) {
+
+		return employeeRepo.findById(eid);
 	}
 	
 	

@@ -21,6 +21,14 @@ public class Alien {
 		this.aid = aid;
 	}
 
+	public String getTech() {
+		return tech;
+	}
+
+	public void setTech(String tech) {
+		this.tech = tech;
+	}
+
 	public String getAname() {
 		return aname;
 	}
@@ -29,13 +37,7 @@ public class Alien {
 		this.aname = aname;
 	}
 
-	public String getTech() {
-		return tech;
-	}
-
-	public void setTech(String tech) {
-		this.tech = tech;
-	}
+	
 	
 	
 
