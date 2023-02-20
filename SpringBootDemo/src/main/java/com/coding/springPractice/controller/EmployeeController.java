@@ -5,8 +5,10 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -56,7 +58,24 @@ public class EmployeeController {
 		return employee;
 	}
 	
-	@RequestMapping(path="/employees",produces="application/xml")//We can do content negotiations using produces
+	@PutMapping("/employee")
+	@ResponseBody
+	public Employee saveOrUpdateEmployee(@RequestBody Employee employee) {
+		employeeRepo.save(employee);
+		System.out.println(employee);
+		return employee;
+	}
+	
+	@DeleteMapping("/employee/{eid}")
+	@ResponseBody
+	public String deleteEmployee(@PathVariable int eid) {
+		Employee employee=employeeRepo.getById(eid);
+		employeeRepo.delete(employee);
+		return eid +"got deleted";
+	}
+	
+	//@RequestMapping(path="/employees",produces="application/xml")//We can do content negotiations using produces
+	@RequestMapping("/employees")
 	@ResponseBody
 	public List<Employee> getEmployee() {
 		
